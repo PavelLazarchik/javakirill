@@ -35,13 +35,14 @@ public class GroupCreationTests {
     wd.findElement(By.name("new")).click();
     wd.findElement(By.name("group_name")).click();
     wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys("LPV Test 1");
+    wd.findElement(By.name("group_name")).sendKeys("LPV Test 2");
     wd.findElement(By.name("group_header")).click();
     wd.findElement(By.name("group_header")).clear();
-    wd.findElement(By.name("group_header")).sendKeys("LPV Test 1 Header");
+    wd.findElement(By.name("group_header")).sendKeys("LPV Test 2 Header");
     wd.findElement(By.name("group_footer")).click();
     wd.findElement(By.name("group_footer")).clear();
-    wd.findElement(By.name("group_footer")).sendKeys("LPV Test 1 Footer");
+    wd.findElement(By.name("group_footer")).sendKeys("LPV Test 2 Footer");
+    wd.findElement(By.name("submit")).click();
   }
 
   @AfterMethod
