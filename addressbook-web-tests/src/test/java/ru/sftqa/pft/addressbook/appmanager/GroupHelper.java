@@ -10,7 +10,9 @@ public class GroupHelper {
   public GroupHelper(FirefoxDriver wd) {
     this.wd = wd;
   }
-
+  public void returnToGroupPage() {
+    click(By.linkText("group page"));
+  }
   public void submitGroupCreation() {
     click(By.name("submit"));
   }
@@ -35,9 +37,7 @@ public class GroupHelper {
     click(By.name("new"));
   }
 
-  public void returnToGroupPage() {
-    click(By.linkText("group page"));
-  }
+
 
   public void deleteSelectedGroups() {
     click(By.name("delete"));
@@ -45,5 +45,13 @@ public class GroupHelper {
 
   public void selectGroup() {
     click(By.name("selected[]"));
+  }
+
+  public void initGroupModification() {
+    click(By.name("edit"));
+  }
+
+  public void submitGroupModification() {
+    click(By.name("update"));
   }
 }
