@@ -15,3 +15,4 @@ public class NavigationHelper {
     wd.findElement(By.linkText("groups")).click();
   }
 }
+

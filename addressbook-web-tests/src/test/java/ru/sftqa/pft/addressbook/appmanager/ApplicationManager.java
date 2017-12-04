@@ -13,6 +13,7 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
+  private ContactHelper contactHelper;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
@@ -46,4 +47,6 @@ public class ApplicationManager {
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
   }
+
+  public ContactHelper getContactHelper() {return contactHelper;}
 }
