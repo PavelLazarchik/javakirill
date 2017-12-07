@@ -4,14 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.sftqa.pft.addressbook.model.ContactData;
 
-public class ContactHelper {
-  private FirefoxDriver wd;
+public class ContactHelper extends HelperBase{
   public ContactHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   //created the method to click on the link Add New for contact creation
-  public void initContactCreation() {wd.findElement(By.linkText("add new")).click();
+  public void initContactCreation() {
+    click(By.linkText("add new"));
+    //wd.findElement(By.linkText("add new")).click();
   }
 
   public void fillContactForm(ContactData contactData) {
@@ -31,13 +32,4 @@ public class ContactHelper {
     click(By.name("submit"));
   }
 
-  private void click(By locator) {
-    wd.findElement(locator).click();
-  }
-
-  private void type(By locator, String text) {
-    click(locator);
-    wd.findElement(locator).clear();
-    wd.findElement(locator).sendKeys(text);
-  }
 }
