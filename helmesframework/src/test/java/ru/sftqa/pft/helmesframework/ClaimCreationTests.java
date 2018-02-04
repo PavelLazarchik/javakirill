@@ -1,32 +1,29 @@
-package ru.stqa.pft.helmesframework;
+package ru.sftqa.pft.helmesframework;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import static org.testng.Assert.*;
-
-import java.util.concurrent.TimeUnit;
-import java.util.Date;
-import java.io.File;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.*;
-import static org.openqa.selenium.OutputType.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import  org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class ClaimCreationTests {
-    FirefoxDriver wd;
+    ChromeDriver wd;
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+        wd  = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
     @Test
-    public void ClaimCreationTests() {
-        wd.get("https://www-i1ref.audatex.net/sso/login?service=https%3a%2f%2fwww-i1ref.audatex.net%2fbreclient%2fui");
+    public void testClaimCreation() {
+        wd.get("https://www-i1ref.audatex.net/breclient/ui");
         wd.findElement(By.id("ssousername")).click();
         wd.findElement(By.id("ssousername")).clear();
         wd.findElement(By.id("ssousername")).sendKeys("mapfre_u3");
@@ -42,7 +39,9 @@ public class ClaimCreationTests {
         wd.findElement(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber")).clear();
         wd.findElement(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber")).sendKeys("LPVLP 02022018-4");
         wd.findElement(By.id("submitButton")).click();
-        wd.findElement(By.id("icon-home")).click();
+        wd.findElement(By.id("toDoListItem_Claim_description")).click();
+       // wd.findElement(By.xpath("//div[@class='collapsed-menu']//button[.='Toggle navigation']")).click();
+      //  wd.findElement(By.id("icon-home")).click();
     }
     
     @AfterMethod
