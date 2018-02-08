@@ -33,18 +33,23 @@ public class ClaimCreationTests {
   }
 
   @Test
-  public void testClaimCreation() {
+  public void testClaimCreation() throws InterruptedException {
 
     initClaimCreation();
     fillinRequiredFields(new RequiredCaseData("LPV CN 01022018-4", "LPVLP 02022018-4"));
     submitClaimCreation();
+   // wd.findElement(By.xpath("//*[@class='navbar-toggle collapsed false']")).click();
+   // wd.findElement(By.xpath("//li[@id=\"navigation-action-li-home\"]")).click();
+    //wd.findElement(By.xpath("//a[@name = 'workflowlink_home']")).click();
     // wd.findElement(By.id("toDoListItem_Claim_description")).click();
-    // wd.findElement(By.xpath("//div[@class='collapsed-menu']//button[.='Toggle navigation']")).click();
-    //  wd.findElement(By.id("icon-home")).click();
+    //wd.findElement(By.xpath("//div[@class='collapsed-menu']//button[.='Toggle navigation']")).click();
+    wd.findElement(By.xpath("//a[@id='home']")).click();
   }
 
-  private void submitClaimCreation() {
+  private void submitClaimCreation() throws InterruptedException {
     wd.findElement(By.id("submitButton")).click();
+    Thread.sleep(500);
+
   }
 
   private void fillinRequiredFields(RequiredCaseData requiredCaseData) {
