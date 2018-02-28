@@ -1,4 +1,4 @@
-package ru.sftqa.pft.helmesframework;
+package ru.sftqa.pft.helmesframework.model;
 
 public class RequiredCaseData {
   private final String caseNumber;
