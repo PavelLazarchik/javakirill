@@ -6,13 +6,13 @@ public class DeletionClaimTest extends TestBase{
 
     @Test
     public void testClaimDeletion() throws InterruptedException {
-        app.openMoreMenu();
-        app.selectFirstClaimFromWorkListGrid();
-        app.deleteTaskFromMoreMenu();
+        app.getNavigationHelper().openMoreMenu();
+        app.getNewCaseHelper().selectFirstClaimFromWorkListGrid();
+        app.getNavigationHelper().deleteTaskFromMoreMenu();
         Thread.sleep(3000);
-        app.fillInCommentForDeletion();
-        app.submitDeletion();
-        app.clickClaimManagerIcon();
+        app.getNewCaseHelper().fillInCommentForDeletion();
+        app.getNewCaseHelper().submitDeletion();
+        app.getNavigationHelper().clickClaimManagerIcon();
     }
 
 }

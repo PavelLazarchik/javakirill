@@ -9,10 +9,10 @@ public class ClaimCreationTests extends TestBase {
   @Test
   public void testClaimCreation() throws InterruptedException {
 
-    app.initClaimCreation();
-    app.fillinRequiredFields(new RequiredCaseData("LPV CN 01022018-4", "LPVLP 02022018-4"));
-    app.submitClaimCreation();
-    app.clickClaimManagerIcon();
+    app.getNewCaseHelper().initClaimCreation();
+    app.getNewCaseHelper().fillinRequiredFields(new RequiredCaseData("LPV CN 01022018-4", "LPVLP 02022018-4"));
+    app.getNewCaseHelper().submitClaimCreation();
+    app.getNavigationHelper().clickClaimManagerIcon();
   }
 
 }
