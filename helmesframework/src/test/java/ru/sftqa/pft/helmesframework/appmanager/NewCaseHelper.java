@@ -4,44 +4,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.sftqa.pft.helmesframework.model.RequiredCaseData;
 
-public class NewCaseHelper {
-  private ChromeDriver wd;
+public class NewCaseHelper extends HelperBase {
 
   public NewCaseHelper(ChromeDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void submitClaimCreation() throws InterruptedException {
-    wd.findElement(By.id("submitButton")).click();
+    click(By.id("submitButton"));
    // Thread.sleep(500);
 
   }
 
   public void fillinRequiredFields(RequiredCaseData requiredCaseData) {
-    wd.findElement(By.id("root.task.claimNumber")).click();
-    wd.findElement(By.id("root.task.claimNumber")).clear();
-    wd.findElement(By.id("root.task.claimNumber")).sendKeys(requiredCaseData.getCaseNumber());
-    wd.findElement(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber")).click();
-    wd.findElement(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber")).clear();
-    wd.findElement(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber")).sendKeys(requiredCaseData.getLicensePlateNumber());
+    type(By.id("root.task.claimNumber"), requiredCaseData.getCaseNumber());
+    type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber"), requiredCaseData.getLicensePlateNumber());
     //L2M8
   }
 
   public void initClaimCreation() {
-    wd.findElement(By.id("newCaseBtn")).click();
+    click(By.id("newCaseBtn"));
   }
 
   public void submitDeletion() {
-      wd.findElement(By.xpath("//div[@id='DeleteTaskPopup']//button[@class='btn-solera btn-solera-default btn-modal']")).click();
+    click(By.xpath("//div[@id='DeleteTaskPopup']//button[@class='btn-solera btn-solera-default btn-modal']"));
   }
 
   public void fillInCommentForDeletion() {
-      wd.findElement(By.id("root.task.workflow.deleteTask.dialog-comment")).click();
-      wd.findElement(By.id("root.task.workflow.deleteTask.dialog-comment")).clear();
-      wd.findElement(By.id("root.task.workflow.deleteTask.dialog-comment")).sendKeys("lpv");
+    type(By.id("root.task.workflow.deleteTask.dialog-comment"), "lpv");
   }
 
   public void selectFirstClaimFromWorkListGrid() {
-      wd.findElement(By.id("more-row-icon-0")).click();
+    click(By.id("more-row-icon-0"));
   }
 }
