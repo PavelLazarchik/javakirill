@@ -20,4 +20,8 @@ public class NavigationHelper extends HelperBase{
   public void openMoreMenu() {
     click(By.xpath("//div[@class=' z-last z-cell']"));
       }
+
+   public void clickNextButtonOnClaim() {
+    click(By.id("nextButton"));
+   }
 }

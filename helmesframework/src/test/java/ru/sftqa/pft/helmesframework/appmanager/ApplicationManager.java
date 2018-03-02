@@ -21,7 +21,7 @@ public class ApplicationManager {
     newCaseHelper = new NewCaseHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
-    sessionHelper.login("M_BREI_02SendMessageWithAttachments", "demo");
+    sessionHelper.login("mapfre_u3", "mapfre");
   }
 
 
