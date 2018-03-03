@@ -1,7 +1,6 @@
 package ru.sftqa.pft.helmesframework.appmanager;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -11,6 +10,7 @@ public class ApplicationManager {
   private  NavigationHelper navigationHelper;
   private NewCaseHelper newCaseHelper;
   private SessionHelper sessionHelper;
+  private  MessageHelper messageHelper;
 
 
 
@@ -20,11 +20,10 @@ public class ApplicationManager {
    wd.get("https://www-i1ref.audatex.net/breclient/ui");
     newCaseHelper = new NewCaseHelper(wd);
     navigationHelper = new NavigationHelper(wd);
+    messageHelper = new MessageHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("mapfre_u3", "mapfre");
   }
-
-
 
   public void stop() {
     wd.quit();
@@ -36,5 +35,9 @@ public class ApplicationManager {
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
+  }
+
+  public MessageHelper getMessageHelper() {
+    return messageHelper;
   }
 }

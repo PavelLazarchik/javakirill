@@ -24,4 +24,8 @@ public class NavigationHelper extends HelperBase{
    public void clickNextButtonOnClaim() {
     click(By.id("nextButton"));
    }
+
+   public void openMessageListGrid () {
+     click(By.id("navigation-action-li-messagelist"));
+   }
 }

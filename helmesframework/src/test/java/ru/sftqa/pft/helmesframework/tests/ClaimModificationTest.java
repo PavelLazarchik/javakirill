@@ -13,14 +13,6 @@ public class ClaimModificationTest extends TestBase {
         app.getNavigationHelper().clickNextButtonOnClaim();
         app.getNewCaseHelper().fillInUpdatedDataToClaimDescription(new UpdatedClaimDescriptionData("LPV02032018-LPV", "LPV PolicyUpdated"));
         app.getNavigationHelper().clickNextButtonOnClaim();
-
-        /*app.getNewCaseHelper().initClaimCreation();
-        app.getNewCaseHelper().fillinRequiredFields(new RequiredCaseData("LPV CN 01022018-4", "LPVLP 02022018-4"));
-        app.getNewCaseHelper().submitClaimCreation();
-        app.getNavigationHelper().clickNextButtonOnClaim();
-        app.getNewCaseHelper().fillInClaimDescriptionData(new ClaimDescriptionData("LPVPolicyCompany", "LPVInspectionCompany", "LPVRepairerCompany"));
-        app.getNavigationHelper().clickNextButtonOnClaim();
-        */
     }
 
 }
