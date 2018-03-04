@@ -11,7 +11,7 @@ public class ContactModificationTests extends TestBase{
     app.getNavigationHelper().goToContactPage();
     app.getContactHelper().selectContact();
     app.getContactHelper().clickEditIcon();
-    app.getContactHelper().fillContactForm(new ContactData("LpvFn2", "LpvMN2", "LpvLN2", "LpvNN2", "LpvT2", "LpvCny2", "LpvAddrs2", "255", "750", "aaa@aaa.vv"));
+    app.getContactHelper().fillContactForm(new ContactData("LpvFn2", "LpvMN2", "LpvLN2", "LpvNN2", "LpvT2", "LpvCny2", "LpvAddrs2", "255", "750", "aaa@aaa.vv", null), false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().goToContactPage();
 
