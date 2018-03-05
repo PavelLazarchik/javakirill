@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.sftqa.pft.addressbook.model.ContactData;
+import ru.sftqa.pft.addressbook.model.GroupData;
 
 public class ContactHelper extends HelperBase{
 
@@ -20,7 +21,7 @@ public class ContactHelper extends HelperBase{
     //wd.findElement(By.linkText("add new")).click();
   }
 
-  public void fillContactForm(ContactData contactData, boolean creation) {
+  public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getfirstName());
     type(By.name("middlename"), contactData.getMiddleName());
     type(By.name("lastname"), contactData.getLastName());
@@ -31,8 +32,10 @@ public class ContactHelper extends HelperBase{
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("mobile"), contactData.getMobilePhone());
     type(By.name("email"), contactData.getEmail());
+  }
 
-    //если процесс создания контакта, элемент группа ДОЛЖНГ БЫТЬ на странице. И если он есть - то все ок, если нет - exeption
+
+   /* //если процесс создания контакта, элемент группа ДОЛЖНГ БЫТЬ на странице. И если он есть - то все ок, если нет - exeption
     if(creation){
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     }
@@ -41,6 +44,7 @@ public class ContactHelper extends HelperBase{
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
   }
+  */
 
   public void submitContactCreation() {
     click(By.name("submit"));
@@ -64,4 +68,14 @@ public class ContactHelper extends HelperBase{
    public void acceptAlertpopup() {
      wd.switchTo().alert().accept();
    }
+
+  public void CreateAContact(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact);
+    submitContactCreation();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }
