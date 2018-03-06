@@ -28,4 +28,8 @@ public class NavigationHelper extends HelperBase{
    public void openMessageListGrid () {
      click(By.id("navigation-action-li-messagelist"));
    }
+
+   public void openClaimDescriptionPageFromMenu() {
+    click(By.id("toDoListItem_Claim_description"));
+   }
 }
