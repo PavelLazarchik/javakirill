@@ -18,6 +18,8 @@ public class HelperBase {
     wd.findElement(locator).click();
   }
 
+  //Добавляем проверку, что если поле заполнено (определено), то тогда не надо к полю применять  действие "очистить" (clear()).
+  //Тем самым в поле оставляем предыдущее, заполненное значение
   protected void type(By locator, String text) {
     click(locator);
     if (text != null) {

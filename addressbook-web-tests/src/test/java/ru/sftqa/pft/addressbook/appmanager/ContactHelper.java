@@ -32,11 +32,12 @@ public class ContactHelper extends HelperBase{
     type(By.name("mobile"), contactData.getMobilePhone());
     type(By.name("email"), contactData.getEmail());
 
-    //если процесс создания контакта, элемент группа ДОЛЖНГ БЫТЬ на странице. И если он есть - то все ок, если нет - exeption
+    //если процесс создания контакта, элемент 'Groups' ДОЛЖНГ БЫТЬ на странице. И если он есть - то все ок, если нет - exeption
     if(creation){
+      //как выбрать элемент из drop down
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     }
-    // если процесс изменения контакта - элемент группа НЕ ДОЛЖЕН БЫТЬ
+    // если процесс изменения контакта - элемент 'Groups' НЕ ДОЛЖЕН БЫТЬ
     else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
@@ -64,4 +65,14 @@ public class ContactHelper extends HelperBase{
    public void acceptAlertpopup() {
      wd.switchTo().alert().accept();
    }
+
+  public void createContact(ContactData contact,boolean creation) {
+   initContactCreation();
+   fillContactForm(contact, true);
+   submitContactCreation();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }
