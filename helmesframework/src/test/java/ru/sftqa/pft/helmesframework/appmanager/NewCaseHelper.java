@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import ru.sftqa.pft.helmesframework.model.ClaimDescriptionData;
-import ru.sftqa.pft.helmesframework.model.RequiredCaseData;
+import ru.sftqa.pft.helmesframework.model.NewCaseData;
 import ru.sftqa.pft.helmesframework.model.UpdatedClaimDescriptionData;
 
 public class NewCaseHelper extends HelperBase {
@@ -19,7 +19,7 @@ public class NewCaseHelper extends HelperBase {
 
   }
 
-  public void fillinRequiredFields(RequiredCaseData requiredCaseData) {
+  public void fillinRequiredFields(NewCaseData requiredCaseData) {
     type(By.id("root.task.claimNumber"), requiredCaseData.getCaseNumber());
     type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber"), requiredCaseData.getLicensePlateNumber());
     //L2M8
@@ -33,9 +33,11 @@ public class NewCaseHelper extends HelperBase {
     click(By.xpath("//div[@id='DeleteTaskPopup']//button[@class='btn-solera btn-solera-default btn-modal']"));
   }
 
+
   public void fillInCommentForDeletion() {
     type(By.id("root.task.workflow.deleteTask.dialog-comment"), "lpv");
   }
+
 
   public void selectFirstClaimFromWorkListGrid() {
     click(By.id("more-row-icon-0"));
@@ -43,17 +45,27 @@ public class NewCaseHelper extends HelperBase {
 
 
   public void fillInClaimDescriptionData(ClaimDescriptionData claimDescriptionData) {
-   type(By.id("root.task.basicClaimData.policyData.policyHolder.companyName"), claimDescriptionData.getPolicyCompanyName());
-   type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
-   type(By.id("root.task.basicClaimData.repairDetail.bodyshop.companyName"), claimDescriptionData.getRepairerCompanyName());
+    type(By.id("root.task.claimNumber"), claimDescriptionData.getCaseNumber());
+    type(By.id("root.task.displayName"),claimDescriptionData.getReferenceNumber());
+    type(By.id("root.task.basicClaimData.policyData.policyHolder.companyName"), claimDescriptionData.getPolicyCompanyName());
+    type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
+    type(By.id("root.task.basicClaimData.repairDetail.bodyshop.companyName"), claimDescriptionData.getRepairerCompanyName());
+
   }
 
   public void openClaimDetails() {
     new Actions(wd).doubleClick(wd.findElement(By.xpath("//div[@class='z-table']/div[1]/div[4]/div"))).build().perform();
   }
 
-  public void fillInUpdatedDataToClaimDescription(UpdatedClaimDescriptionData updatedClaimDescriptionData){
+ /* public void fillInUpdatedDataToClaimDescription(UpdatedClaimDescriptionData updatedClaimDescriptionData){
     type(By.id("root.task.claimNumber"), updatedClaimDescriptionData.getCaseNumber());
     type(By.id("root.task.basicClaimData.policyData.policyHolder.companyName"), updatedClaimDescriptionData.getPolicyCompanyName());
-  }
+  }*/
+   public void fillInUpdatedDataToClaimDescription(ClaimDescriptionData claimDescriptionData) {
+     type(By.id("root.task.claimNumber"), claimDescriptionData.getCaseNumber());
+     type(By.id("root.task.displayName"),claimDescriptionData.getReferenceNumber());
+     type(By.id("root.task.basicClaimData.policyData.policyHolder.companyName"), claimDescriptionData.getPolicyCompanyName());
+     type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
+     type(By.id("root.task.basicClaimData.repairDetail.bodyshop.companyName"), claimDescriptionData.getRepairerCompanyName());
+   }
 }
