@@ -8,7 +8,6 @@ public class SessionHelper extends HelperBase {
   //private FirefoxDriver wd;
   public SessionHelper(WebDriver wd) {
     super(wd);
-    //this.wd = wd;
   }
 
   //create new method login as it use each time
