@@ -49,7 +49,7 @@ public class NewCaseHelper extends HelperBase {
     type(By.id("root.task.claimNumber"), claimDescriptionData.getCaseNumber());
     type(By.id("root.task.displayName"),claimDescriptionData.getReferenceNumber());
     type(By.id("root.task.basicClaimData.policyData.policyHolder.companyName"), claimDescriptionData.getPolicyCompanyName());
-    type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
+   // type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
     type(By.id("root.task.basicClaimData.repairDetail.bodyshop.companyName"), claimDescriptionData.getRepairerCompanyName());
 
   }
@@ -66,7 +66,7 @@ public class NewCaseHelper extends HelperBase {
      type(By.id("root.task.claimNumber"), claimDescriptionData.getCaseNumber());
      type(By.id("root.task.displayName"),claimDescriptionData.getReferenceNumber());
      type(By.id("root.task.basicClaimData.policyData.policyHolder.companyName"), claimDescriptionData.getPolicyCompanyName());
-     type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
+    // type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
      type(By.id("root.task.basicClaimData.repairDetail.bodyshop.companyName"), claimDescriptionData.getRepairerCompanyName());
    }
 

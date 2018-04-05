@@ -12,7 +12,7 @@ public class ClaimDescriptionCreationTest extends TestBase{
    // app.getNavigationHelper().openClaimDescriptionPageFromMenu();
     app.getNavigationHelper().clickNextButtonOnClaim();
     Thread.sleep(3000);
-    app.getNewCaseHelper().fillInClaimDescriptionData(new ClaimDescriptionData("Case Number ", "12345", "LPV PolicyCompany","LPV InspectionCompany", "LPV Repairer Company"));
+    app.getNewCaseHelper().fillInClaimDescriptionData(new ClaimDescriptionData("Case Number ", "3", "LPV PolicyCompany","LPV RepairerCompany"));
     app.getNavigationHelper().clickNextButtonOnClaim();
 
   }
