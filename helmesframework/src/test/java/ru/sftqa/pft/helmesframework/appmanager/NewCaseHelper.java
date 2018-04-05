@@ -13,7 +13,7 @@ public class NewCaseHelper extends HelperBase {
     super(wd);
   }
 
-  public void submitClaimCreation() throws InterruptedException {
+  public void submitClaimCreation()  {
     click(By.id("submitButton"));
    // Thread.sleep(500);
 
@@ -22,6 +22,7 @@ public class NewCaseHelper extends HelperBase {
   public void fillinRequiredFields(NewCaseData requiredCaseData) {
     type(By.id("root.task.claimNumber"), requiredCaseData.getCaseNumber());
     type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.plateNumber"), requiredCaseData.getLicensePlateNumber());
+    type(By.id("root.task.basicClaimData.vehicle.vehicleIdentification.VIN"), requiredCaseData.getVIN());
     //L2M8
   }
 
@@ -68,4 +69,14 @@ public class NewCaseHelper extends HelperBase {
      type(By.id("root.task.basicClaimData.vehicle.vehicleAdmin.vehicleOwner.companyName"), claimDescriptionData.getInspectionCompanyName());
      type(By.id("root.task.basicClaimData.repairDetail.bodyshop.companyName"), claimDescriptionData.getRepairerCompanyName());
    }
+
+   public boolean isThereClaim () {
+     return isElementPresent(By.name("select"));
+   }
+
+  public void createAClaim(NewCaseData requiredCaseData) {
+    initClaimCreation();
+    fillinRequiredFields(requiredCaseData);
+    submitClaimCreation();
+  }
 }

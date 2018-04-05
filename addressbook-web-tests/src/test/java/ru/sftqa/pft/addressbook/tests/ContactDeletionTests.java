@@ -16,7 +16,7 @@ public class ContactDeletionTests extends TestBase {
       app.getContactHelper().CreateAContact(new ContactData("LpvFn2", "LpvMN2", "LpvLN1", "LpvNN1", "LpvT1", "LpvCny1", "LpvAddrs1", "255", "750", "aaa@aaa.vv", "LPV Test 2"));
     }
     */
-    app.getNavigationHelper().goToContactPage();
+   // app.getNavigationHelper().goToContactPage();
     app.getContactHelper().selectContact();
     app.getContactHelper().clickDeleteButton();
     app.getContactHelper().acceptAlertpopup();

@@ -11,7 +11,7 @@ public class CreateNewCaseTest extends TestBase {
   public void testClaimCreation() throws InterruptedException {
 
     app.getNewCaseHelper().initClaimCreation();
-    app.getNewCaseHelper().fillinRequiredFields(new NewCaseData("LPV CN 01022018-4", "LPVLP 02022018-4"));
+    app.getNewCaseHelper().fillinRequiredFields(new NewCaseData("LPV CN 01022018-4", "LPVLP 02022018-4", "TRUZZZ8J991028634 "));
     app.getNewCaseHelper().submitClaimCreation();
     /*
     app.getNavigationHelper().clickNextButtonOnClaim();

@@ -22,7 +22,7 @@ public class ApplicationManager {
     navigationHelper = new NavigationHelper(wd);
     messageHelper = new MessageHelper(wd);
     sessionHelper = new SessionHelper(wd);
-    sessionHelper.login("mapfre_u3", "mapfre");
+    sessionHelper.login("lpv_repairer", "demo");
   }
 
   public void stop() {
