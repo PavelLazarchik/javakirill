@@ -16,7 +16,7 @@ public class ClaimDescriptionModificationTest extends TestBase {
         }
         app.getNewCaseHelper().openClaimDetails();
         app.getNavigationHelper().clickNextButtonOnClaim();
-        app.getNewCaseHelper().fillInUpdatedDataToClaimDescription(new ClaimDescriptionData("LPV02032018-Updated2", null, "Policy Updated2", "RepairerUpdated2" ));
+        app.getNewCaseHelper().fillInUpdatedDataToClaimDescription(new ClaimDescriptionData("LPV02032018-UpdatedLPV2", null, "Damage loss","Policy Updated2", "RepairerUpdated2" ));
         app.getNavigationHelper().clickNextButtonOnClaim();
     }
 
