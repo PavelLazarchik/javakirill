@@ -33,6 +33,7 @@ public class NewCaseHelper extends HelperBase {
   }
 
   public void submitDeletion() {
+   // click(By.className("btn-solera btn-solera-default btn-modal"));
     click(By.xpath("//div[@id='DeleteTaskPopup']//button[@class='btn-solera btn-solera-default btn-modal']"));
   }
 
@@ -73,7 +74,7 @@ public class NewCaseHelper extends HelperBase {
     type(By.id("root.task.displayName"),claimDescriptionData.getReferenceNumber());
     //  new Select(wd.findElement(By.xpath("//*[@class='Select root.task.caseType has-value Select--single']"))).selectByValue(claimDescriptionData.getCaseType());
      click(By.id("react-select-root.task.caseType--value-item"));
-    // wd.findElement(By.xpath("//div[@aria-activedescendant = 'react-select-root.task.caseType--option-3']")).click();
+     wd.findElement(By.xpath("//div[@aria-activedescendant = 'react-select-root.task.caseType--option-3']")).click();
 
 
 

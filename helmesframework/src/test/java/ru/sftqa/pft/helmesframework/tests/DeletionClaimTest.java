@@ -8,9 +8,10 @@ public class DeletionClaimTest extends TestBase{
     public void testClaimDeletion() throws InterruptedException {
         app.getNavigationHelper().openMoreMenu();
         app.getNewCaseHelper().selectFirstClaimFromWorkListGrid();
-        app.getNavigationHelper().deleteTaskFromMoreMenu();
+        app.getNavigationHelper().deleteTaskFromMainMenu();
         Thread.sleep(3000);
-        app.getNewCaseHelper().fillInCommentForDeletion();
+        //commented this step because of deletion scenario is removed
+       // app.getNewCaseHelper().fillInCommentForDeletion();
         app.getNewCaseHelper().submitDeletion();
         app.getNavigationHelper().clickClaimManagerIcon();
     }

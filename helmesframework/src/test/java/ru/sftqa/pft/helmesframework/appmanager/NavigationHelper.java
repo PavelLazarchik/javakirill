@@ -13,8 +13,8 @@ public class NavigationHelper extends HelperBase{
     click(By.id("navigation-action-li-home"));
       }
 
-  public void deleteTaskFromMoreMenu() {
-    click(By.linkText("Delete the task"));
+  public void deleteTaskFromMainMenu() {
+    click(By.id("deleteTasks"));
     }
 
   public void openMoreMenu() {
